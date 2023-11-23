@@ -1,0 +1,30 @@
+Car Rental where a client able to rent a car by day
+User Interface details
+Common user point:
+- Register,personal profile, orders bin
+Admin 
+- Display orders with, delete , block, create users
+Participant 
+- Editing his profile, checking orders, and payement
+----------------
+Developments details
+Tables and Classes
+- User Class & Table
+	user_id,userName,userEmail,userPassword,userAddress,userBlocked,userRole
+- Car Class & Table 
+	car_id,carModel,carRentalYear,carColor,carCompany
+- Order class & Table
+	order_id,user_id,orderDate,returnDate,carReturned,BigDecimal rentalCost
+
+Technology:
+Choose your favorite
+for me 
+java as back end
+Postgresql as Database
+servelet and jsp as front-end
+
+Design patterns which could be implemented
+Singleton
+Factory
+Builder
+MayBe more, depends 
