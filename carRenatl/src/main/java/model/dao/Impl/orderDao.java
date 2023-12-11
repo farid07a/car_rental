@@ -3,7 +3,7 @@ package model.dao.Impl;
 import java.util.List;
 
 import domain.Order;
-import model.dao.GenericDao;
+import model.dao.api.GenericDao;
 
 public class orderDao implements GenericDao<Order>{
 

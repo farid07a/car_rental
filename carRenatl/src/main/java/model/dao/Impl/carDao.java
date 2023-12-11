@@ -3,9 +3,11 @@ package model.dao.Impl;
 import java.util.List;
 
 import domain.Car;
-import model.dao.GenericDao;
+import model.dao.api.AbstractDao;
+import model.dao.api.GenericDao;
+import model.mapping.Impl.CarMapper;
 
-public class carDao implements GenericDao<Car>{
+public class carDao extends AbstractDao<Car>{
 
 	@Override
 	public int insertItem(Car item) {
@@ -15,14 +17,15 @@ public class carDao implements GenericDao<Car>{
 
 	@Override
 	public List<Car> getAllItems() {
-		// TODO Auto-generated method stub
-		return null;
+		// ::BigINT Explicite casting 
+		return queryForObjects("SELECT * FROM car_table WHERE car_id=?::BIGINT", new CarMapper());
+		
 	}
 
 	@Override
 	public Car getItemById(long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return  queryForObject("SELECT * FROM car_table WHERE car_id=?::BIGINT", new CarMapper(),String.valueOf(id));
 	}
 
 	@Override
